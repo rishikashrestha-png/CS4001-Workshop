@@ -10,7 +10,7 @@ public class RickshawFare
        double perMin = 3;
        double localDis = 0.15;
        double surcharge = 0.20;
-       
+       //input
        System.out.println("Enter the distance in kilometers");
        double distance = sc.nextDouble();
        
@@ -23,7 +23,7 @@ public class RickshawFare
        System.out.println("Is it night time? (yes/no)");
        String night = sc.next().toLowerCase();
        
-       double fare = baseFare + (distance * perKM) + (time * perMin);
+       double fare = baseFare + (distance * perKM) + (time * perMin);//calculation
        
        if(local.equals("yes") && distance > 10){
            fare -= fare * localDis;
@@ -32,7 +32,7 @@ public class RickshawFare
        if(night.equals("yes")){
            fare += fare * surcharge;
        }
-       
+       //output
        System.out.println("the total fare is Rs" + fare);
        sc.close();
 }
